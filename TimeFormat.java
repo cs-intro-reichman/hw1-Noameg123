@@ -18,9 +18,11 @@ public class TimeFormat {
 			if (args[0].charAt(0) == '0') {
 				hours = Character.getNumericValue(args[0].charAt(1));	}
 		}
-		else {
+		if (hours > 12) {
 			part_of_day = "PM";
+			hours = (hours -12);
 		}
+		
 
 		System.out.println(hours + ":" + String.format("%02d", minutes) + " " + part_of_day);
 
