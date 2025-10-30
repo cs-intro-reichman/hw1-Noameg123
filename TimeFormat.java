@@ -13,14 +13,16 @@ public class TimeFormat {
 		// Does the same with the minutes part of the input.
 		int minutes = Integer.parseInt("" + args[0].charAt(3) + args[0].charAt(4));
 		String part_of_day= "";
-		if (hours > 0 && hours < 12) {
+		if (hours >= 0 && hours < 12) {
 			part_of_day = "AM";
 			if (args[0].charAt(0) == '0') {
 				hours = Character.getNumericValue(args[0].charAt(1));	}
 		}
-		if (hours > 12) {
+		if (hours >= 12) {
 			part_of_day = "PM";
+			if (hours != 12){
 			hours = (hours -12);
+			}
 		}
 		
 
